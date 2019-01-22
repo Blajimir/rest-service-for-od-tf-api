@@ -6,7 +6,7 @@ PATH_TO_SAVE = '/pydir/models/research/object_detection/freeze-models'
 if not os.path.exists(PATH_TO_SAVE):
     os.makedirs(PATH_TO_SAVE)
 
-json_data = json.loads(open('model-list-test.json').read())
+json_data = json.loads(open('model-list.json').read())
 opener = urllib.request.URLopener()
 len_list = len(json_data['list'])
 print('start load models')

@@ -17,13 +17,14 @@ WORKDIR models/research
 RUN protoc object_detection/protos/*.proto --python_out=.
 #CHANGE after test change to git clone
 WORKDIR /pydir
-RUN mkdir rest-service-for-od-tf-api
-WORKDIR rest-service-for-od-tf-api/
-COPY ./restapi.py /pydir/rest-service-for-od-tf-api/
-COPY ./loadmodels.py /pydir/rest-service-for-od-tf-api/
-COPY ./model-list.json /pydir/rest-service-for-od-tf-api/
+RUN git clone https://github.com/Blajimir/rest-service-for-od-tf-api.git
+#RUN mkdir rest-service-for-od-tf-api
+#WORKDIR rest-service-for-od-tf-api/
+#COPY ./restapi.py /pydir/rest-service-for-od-tf-api/
+#COPY ./loadmodels.py /pydir/rest-service-for-od-tf-api/
+#COPY ./model-list.json /pydir/rest-service-for-od-tf-api/
 #TODO: Delete after test
-COPY ./model-list-test.json /pydir/rest-service-for-od-tf-api/
+#COPY ./model-list-test.json /pydir/rest-service-for-od-tf-api/
 #CHANGE end
 RUN python loadmodels.py
 CMD python restapi.py
