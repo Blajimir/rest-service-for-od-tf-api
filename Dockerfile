@@ -10,7 +10,7 @@ RUN pip install tensorflow
 # RUN pip install -q jupyter
 RUN pip install -q flask
 
-RUN mkdir pydir
+RUN mkdir /pydir
 WORKDIR /pydir
 RUN git clone https://github.com/tensorflow/models.git
 WORKDIR models/research
@@ -19,7 +19,7 @@ RUN protoc object_detection/protos/*.proto --python_out=.
 WORKDIR /pydir
 RUN git clone https://github.com/Blajimir/rest-service-for-od-tf-api.git
 #RUN mkdir rest-service-for-od-tf-api
-#WORKDIR rest-service-for-od-tf-api/
+WORKDIR rest-service-for-od-tf-api/
 #COPY ./restapi.py /pydir/rest-service-for-od-tf-api/
 #COPY ./loadmodels.py /pydir/rest-service-for-od-tf-api/
 #COPY ./model-list.json /pydir/rest-service-for-od-tf-api/
