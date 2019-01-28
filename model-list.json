@@ -8,8 +8,6 @@
 		 "link":"http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz"},
 		 {"name":"faster_rcnn_resnet50_coco_2018_01_28",
 		 "link":"http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet50_coco_2018_01_28.tar.gz"},
-		 {"name":"rfcn_resnet101_coco_2018_01_28",
-		 "link":"http://download.tensorflow.org/models/object_detection/rfcn_resnet101_coco_2018_01_28.tar.gz"},
 		 {"name":"faster_rcnn_resnet101_coco_2018_01_28",
 		 "link":"http://download.tensorflow.org/models/object_detection/faster_rcnn_resnet101_coco_2018_01_28.tar.gz"}
 	]
