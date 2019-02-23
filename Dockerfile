@@ -1,5 +1,6 @@
-FROM python:3.6-stretch
+FROM python:3.7-slim
 RUN apt-get update
+RUN apt-get -y install git
 RUN apt-get -y install protobuf-compiler
 # install modules
 RUN pip install -q Cython
