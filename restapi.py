@@ -185,10 +185,10 @@ def prepare_output_dict(out_dict):
     if out_dict and out_dict['num_detections'] > 0:
         for i in range(out_dict['num_detections']):
             class_name = category_index[out_dict['detection_classes'][i]]['name']
-            region = {"Left": prepare_npfloat32(out_dict['detection_boxes'][i][0]),
-                      "Top": prepare_npfloat32(out_dict['detection_boxes'][i][1]),
-                      "Width": prepare_npfloat32(out_dict['detection_boxes'][i][2] - out_dict['detection_boxes'][i][0]),
-                      "Height": prepare_npfloat32(out_dict['detection_boxes'][i][3] - out_dict['detection_boxes'][i][1])}
+            region = {"Left": prepare_npfloat32(out_dict['detection_boxes'][i][1]),
+                      "Top": prepare_npfloat32(out_dict['detection_boxes'][i][0]),
+                      "Width": prepare_npfloat32(out_dict['detection_boxes'][i][3] - out_dict['detection_boxes'][i][1]),
+                      "Height": prepare_npfloat32(out_dict['detection_boxes'][i][2] - out_dict['detection_boxes'][i][0])}
             result["Predictions"].append({"Probability": prepare_npfloat32(out_dict['detection_scores'][i]),
                                           "TagName": class_name,
                                           "Region": region})
