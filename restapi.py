@@ -22,9 +22,9 @@ LIBRARY_FREEZE_MODEL = '/pydir/models/research/object_detection/freeze-models'
 CURRENT_FREEZE_MODEL_DIR = os.path.join(LIBRARY_FREEZE_MODEL, 'current')
 MODELS_LIST_FILE = os.path.join(LIBRARY_FREEZE_MODEL, 'freeze-model-list.json')
 model_list = []
-#DEFAULT_MODEL = 'faster_rcnn_resnet101_coco_2018_01_28'
-DEFAULT_MODEL = 'ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_2018_07_03'
-CURRENT_MODEL = None
+DEFAULT_MODEL = 'faster_rcnn_resnet101_coco_2018_01_28'
+#DEFAULT_MODEL = 'ssd_resnet50_v1_fpn_shared_box_predictor_640x640_coco14_sync_2018_07_03'
+CURRENT_MODEL = os.getenvb('CURRENT_MODEL', DEFAULT_MODEL)
 FROZEN_GRAPH_NAME = 'frozen_inference_graph.pb'
 LABELS_DIR = '/pydir/models/research/object_detection/data'
 LABELS_NAME = 'mscoco_label_map.pbtxt'
@@ -148,7 +148,7 @@ def init(app):
     global DEFAULT_MODEL
     global CURRENT_FREEZE_MODEL_DIR
     global PATH_TO_FROZEN_GRAPH
-    CURRENT_MODEL = DEFAULT_MODEL
+    #CURRENT_MODEL = DEFAULT_MODEL
     if not os.path.exists(CURRENT_FREEZE_MODEL_DIR):
         os.makedirs(CURRENT_FREEZE_MODEL_DIR)
     if not os.path.exists(PATH_TO_FROZEN_GRAPH):
